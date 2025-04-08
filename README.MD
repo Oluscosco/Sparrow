@@ -1,0 +1,1 @@
+A frontend applications that manages googlesheet .. has a login portal where you can input your api as password before accessing google document edit it using google sheet editor in iframes .. use react(tsx and vite)
