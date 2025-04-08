@@ -9,7 +9,7 @@ import Settings from './pages/Settings';
 import Help from './pages/Help';
 import About from './pages/About';
 
-const CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+const CLIENT_ID ="83777510114-8gitui7rus4t9k102cs58rp9cfctp70q.apps.googleusercontent.com";
 const globalStyles = {
   html: {
     height: '100%',
