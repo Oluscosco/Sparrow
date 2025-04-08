@@ -37,33 +37,33 @@ export default defineConfig({
       },
     },
   },
-  server: {
-    port: 3000,
-    strictPort: true,
-    proxy: {
-      '/api': {
-        target: 'https://www.googleapis.com',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-        secure: false,
-        configure: (proxy, _options) => {
-          proxy.on('error', (err, _req, _res) => {
-            //@ts-ignore
-            console.log('proxy error', err);
-          });
-          proxy.on('proxyReq', (_proxyReq, req, _res) => {
-            //@ts-ignore
-            console.log('Sending Request to the Target:', req.method, req.url);
-          });
-          proxy.on('proxyRes', (proxyRes, req, _res) => {
-            //@ts-ignore
-            console.log('Received Response from the Target:', proxyRes.statusCode, req.url);
-          });
-        },
-      },
-    },
-  },
-  preview: {
-    port: 3000,
-  },
+  // server: {
+  //   port: 3000,
+  //   strictPort: true,
+  //   proxy: {
+  //     '/api': {
+  //       target: 'https://www.googleapis.com',
+  //       changeOrigin: true,
+  //       rewrite: (path) => path.replace(/^\/api/, ''),
+  //       secure: false,
+  //       configure: (proxy, _options) => {
+  //         proxy.on('error', (err, _req, _res) => {
+  //           //@ts-ignore
+  //           console.log('proxy error', err);
+  //         });
+  //         proxy.on('proxyReq', (_proxyReq, req, _res) => {
+  //           //@ts-ignore
+  //           console.log('Sending Request to the Target:', req.method, req.url);
+  //         });
+  //         proxy.on('proxyRes', (proxyRes, req, _res) => {
+  //           //@ts-ignore
+  //           console.log('Received Response from the Target:', proxyRes.statusCode, req.url);
+  //         });
+  //       },
+  //     },
+  //   },
+  // },
+  // preview: {
+  //   port: 3000,
+  // },
 })
